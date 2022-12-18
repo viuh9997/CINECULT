@@ -1,33 +1,36 @@
 // criando o corpo da pagina
 
 function build() {
-	document.body.innerHTML += '<span id="menu"><h1 id="logo">CINECULT</h1><div id="theme"><input type="checkbox" name="ck" id="th"><label for="th" id="lbTh"><span></span></label></div></span><nav id="nv"><span id="nav"><input type="text" id="search" placeholder="Search"><button id="searchBtn"><img src="https://cdn-icons-png.flaticon.com/512/151/151773.png" alt="OK" width="20" height="20"></button></span></nav>';
+	document.body.innerHTML +=
+		'<span id="menu"><h1 id="logo">CINECULT</h1><div id="theme"><input type="checkbox" id="th"><label for="th" id="lbTh"><span></span></label></div></span><nav id="nv"><span id="nav"><input type="text" id="search" placeholder="Search"><button id="searchBtn"><img src="https://cdn-icons-png.flaticon.com/512/151/151773.png" alt="OK" width="20" height="20"></button></span></nav>';
 
 	// <span id="menuLg"><a href="">Séries</a><a href="">Ao vivo</a></span>
 
-	document.body.innerHTML += '<div id="section1"><div id="m0"></div><div id="m1"></div><div id="m2"></div><div id="m3"></div><div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe"></div><div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe"></div></div>';
+	document.body.innerHTML +=
+		'<div id="section1"><div id="m0"></div><div id="m1"></div><div id="m2"></div><div id="m3"></div><div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe"></div><div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe"></div></div>';
 
-	document.body.innerHTML += '<footer id="ft"><a href="" id="cntt">Contato</a><div id="name"><p>©2022 STRM97, Inc</p><a href="http://github.com/viuh9997" target="_blank">@viuh9997</a></div></footer>';
+	document.body.innerHTML +=
+		'<footer id="ft"><a href="" id="cntt">Contato</a><div id="name"><p>©2022 STRM97, Inc</p><a href="http://github.com/viuh9997" target="_blank">@viuh9997</a></div></footer>';
 
 	// theme
 
-	const checkbox = document.getElementById("th");
+	const checkbox = document.querySelector("#th");
 
 	checkbox.addEventListener("change", (event) => {
 		if (event.currentTarget.checked) {
-			document.body.style.background = "#181818";
-			document.getElementById("section1").style.background = "#181818";
-			document.getElementById("nv").style.background = "#181818";
-			document.getElementById("logo").style.color = "#fff";
-			document.getElementById("ft").style.background = "#000";
-			document.getElementById("ifrm").style.background = "#181818";
-		} else {
 			document.body.style.background = "#fff";
 			document.getElementById("section1").style.background = "#fff";
 			document.getElementById("nv").style.background = "#fff";
 			document.getElementById("logo").style.color = "#000";
 			document.getElementById("ft").style.background = "#181818";
 			document.getElementById("ifrm").style.background = "#fff";
+		} else {
+			document.body.style.background = "#181818";
+			document.getElementById("section1").style.background = "#181818";
+			document.getElementById("nv").style.background = "#181818";
+			document.getElementById("logo").style.color = "#fff";
+			document.getElementById("ft").style.background = "#000";
+			document.getElementById("ifrm").style.background = "#181818";
 		}
 	});
 
@@ -227,14 +230,13 @@ function build() {
 		.catch(function (error) {
 			console.log(error);
 		});
-	
+
 	// iframe e funções
 	var back = document.getElementById("back");
 	var img0 = document.getElementById("m0");
 	var img1 = document.getElementById("m1");
 	var img2 = document.getElementById("m2");
 	var img3 = document.getElementById("m3");
-
 
 	back.addEventListener("click", function () {
 		document.getElementById("ifrm").style.display = "none";
@@ -251,4 +253,9 @@ function build() {
 	img3.addEventListener("click", function () {
 		document.getElementById("ifrm").style.display = "flex";
 	});
+
+	// salvar
+	function save(target) {
+		localStorage.setItem(target.id, target.checked);
+	}
 }
