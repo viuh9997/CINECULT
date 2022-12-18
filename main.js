@@ -7,10 +7,11 @@ function build() {
 	// <span id="menuLg"><a href="">Séries</a><a href="">Ao vivo</a></span>
 
 	document.body.innerHTML +=
-		'<div id="section1"><div id="m0"></div><div id="m1"></div><div id="m2"></div><div id="m3"></div><div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe"></div><div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe"></div></div>';
+		'<div id="section1"><div id="m0"></div><div id="m1"></div><div id="m2"></div><div id="m3"></div><div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe" sandbox="allow-forms allow-scripts allow-same-origin"></div><div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe"></div></div>';
 
 	document.body.innerHTML +=
-		'<footer id="ft"><a href="" id="cntt">Contato</a><div id="name"><p>©2022 STRM97, Inc</p><a href="http://github.com/viuh9997" target="_blank">@viuh9997</a></div></footer>';
+		'<footer id="ft"><div id="name"><p>©2022 CINECULT</p><a href="http://github.com/viuh9997" target="_blank">@viuh9997</a></div></footer>';
+	//	<a href="" id="cntt">Contato</a>
 
 	// theme
 
@@ -239,6 +240,8 @@ function build() {
 	var img3 = document.getElementById("m3");
 
 	back.addEventListener("click", function () {
+		let iframe = document.getElementById("iframe");
+		iframe.setAttribute("src", "");
 		document.getElementById("ifrm").style.display = "none";
 	});
 	img0.addEventListener("click", function () {
@@ -253,9 +256,4 @@ function build() {
 	img3.addEventListener("click", function () {
 		document.getElementById("ifrm").style.display = "flex";
 	});
-
-	// salvar
-	function save(target) {
-		localStorage.setItem(target.id, target.checked);
-	}
 }
