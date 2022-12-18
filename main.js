@@ -1,5 +1,6 @@
 // criando o corpo da pagina
-/*
+
+function build(){
 document.body.innerHTML +=
 	'<span id="menu"><h1 id="logo">CINECULT</h1><div id="theme"><input type="checkbox" name="ck" id="th"><label for="th" id="lbTh"><span></span></label></div></span><nav id="nv"><span id="nav"><input type="text" id="search" placeholder="Search"><button id="searchBtn"><img src="https://cdn-icons-png.flaticon.com/512/151/151773.png" alt="OK" width="20" height="20"></button></span></nav>';
 
@@ -243,4 +244,5 @@ back.addEventListener("click", function () {
 
 function openIframe() {
 	document.getElementById("ifrm").style.display = "flex";
+}
 }
