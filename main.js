@@ -10,7 +10,7 @@ function build(){
 	document.body.innerHTML += '<footer id="ft"><a href="" id="cntt">Contato</a><div id="name"><p>©2022 STRM97, Inc</p><a href="http://github.com/viuh9997" target="_blank">@viuh9997</a></div></footer>';
 
 	document.body.innerHTML += '<div id="ifrm"><img src="https://cdn-icons-png.flaticon.com/512/3683/3683627.png" width="30" id="back"><iframe frameborder="0" allowfullscreen="true" name="iframe" id="iframe"></div>';
-	*/
+	
 	// theme
 
 	const checkbox = document.getElementById("th");
